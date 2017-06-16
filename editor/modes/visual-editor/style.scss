@@ -26,9 +26,10 @@
 .editor-visual-editor__block {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: $visual-editor-max-width;
+	max-width: $visual-editor-max-width + ( 2 * $block-mover-padding-visible );
 	position: relative;
-	padding: $block-padding;
+	 // The block mover needs to stay inside the block to allow clicks when hovering the block
+	padding: $block-padding $block-padding + $block-mover-padding-visible;
 	transition: 0.2s border-color;
 
 	&:before {
@@ -37,8 +38,8 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: 0;
-		right: 0;
+		left: $block-mover-padding-visible;
+		right: $block-mover-padding-visible;
 		border: 2px solid transparent;
 		transition: 0.2s border-color;
 	}
@@ -253,5 +254,29 @@ $sticky-bottom-offset: 20px;
 		right: 0;
 		background: $blue-medium-500;
 		content: '';
+	}
+}
+
+.editor-visual-editor__placeholder[type=text] {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $visual-editor-max-width;
+	position: relative;
+	padding: $block-padding;
+	border: 2px solid transparent;
+	background: none;
+	box-shadow: none;
+	display: block;
+	transition: 0.2s border-color;
+	text-align: left;
+	width: 100%;
+	color: inherit;
+	opacity: 0.5;
+	font-size: $editor-font-size;
+	cursor: text;
+	left: -2px;
+
+	&:hover {
+		border-left-color: $light-gray-500;
 	}
 }
