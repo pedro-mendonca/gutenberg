@@ -46,12 +46,12 @@ export default function QueryPanel( {
 					},
 					{
 						/* translators: label for ordering posts by title in ascending order */
-						label: __( 'A → Z' ),
+						label: __( 'A &rarr; Z' ),
 						value: 'title/asc',
 					},
 					{
 						/* translators: label for ordering posts by title in descending order */
-						label: __( 'Z → A' ),
+						label: __( 'Z &rarr; A' ),
 						value: 'title/desc',
 					},
 				] }
